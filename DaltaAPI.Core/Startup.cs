@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DaltaAPI.Core.Models;
-using DaltaAPI.Core.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,13 +26,11 @@ namespace DaltaAPI.Core
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<GradesDatabaseSettings>(
-                Configuration.GetSection(nameof(GradesDatabaseSettings)));
+            services.Configure<DatabaseSettings>(
+                Configuration.GetSection(nameof(DatabaseSettings)));
 
-            services.AddSingleton<IGradesDatabaseSettings>(sp =>
-                sp.GetRequiredService<IOptions<GradesDatabaseSettings>>().Value);
-
-            services.AddSingleton<GradesService>();
+            services.AddSingleton<IDatabaseSettings>(sp =>
+                sp.GetRequiredService<IOptions<DatabaseSettings>>().Value);
             
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
