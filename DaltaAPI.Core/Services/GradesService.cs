@@ -18,8 +18,8 @@ namespace DaltaAPI.Core.Services
         public List<Grade> Get() =>
             _grades.Find(null).ToList();
 
-        public Grade GetByUUID(string StudentUUID) =>
-            _grades.Find<Grade>(grade => grade.StudentUUID == StudentUUID).FirstOrDefault();
+        public Grade GetByUUID(string studentUuid) =>
+            _grades.Find<Grade>(grade => grade.StudentUUID == studentUuid).FirstOrDefault();
 
         public Grade Create(Grade grade)
         {
@@ -27,9 +27,9 @@ namespace DaltaAPI.Core.Services
             return grade;
         }
 
-        public void UpdateOne(Grade gradeIn, string StudentUUID)
+        public void UpdateOne(Grade gradeIn, string studentUuid)
         {
-            _grades.ReplaceOne(grade => grade.StudentUUID == StudentUUID, gradeIn);
+            _grades.ReplaceOne(grade => grade.StudentUUID == studentUuid, gradeIn);
         }
 
         public void Delete(Grade gradeIn)
@@ -37,9 +37,9 @@ namespace DaltaAPI.Core.Services
             _grades.DeleteOne(grade => grade.StudentUUID == gradeIn.StudentUUID);
         }
 
-        public void DeleteById(string StudentUUID)
+        public void DeleteById(string studentUuid)
         {
-            _grades.DeleteOne(grade => grade.StudentUUID == StudentUUID);
+            _grades.DeleteOne(grade => grade.StudentUUID == studentUuid);
         }
     }
 }
