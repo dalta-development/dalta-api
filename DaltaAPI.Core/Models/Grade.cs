@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
@@ -6,12 +7,9 @@ namespace DaltaAPI.Core.Models
 {
     public class Grade
     {
-        [BsonRepresentation(BsonType.String)]
-        public string StudentUUID;
-        [BsonRepresentation(BsonType.String)]
-        public string ClassUUID;
-        [BsonRepresentation(BsonType.String)]
-        public string SchoolUUID;
+        public Guid StudentUUID;
+        public Guid ClassUUID;
+        public Guid SchoolUUID;
         
         public List<MarkItem> Marks { get; set; }
     }

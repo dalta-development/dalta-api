@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaltaAPI.Core", "DaltaAPI.Core\DaltaAPI.Core.csproj", "{9DEC23E9-B2C6-47CC-833A-452D6F742001}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaltaAPI.xUnit.Tests", "DaltaAPI.xUnit.Tests\DaltaAPI.xUnit.Tests.csproj", "{37D8FA68-6DB4-4EFF-B8FC-8DAC2F02085A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{9DEC23E9-B2C6-47CC-833A-452D6F742001}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DEC23E9-B2C6-47CC-833A-452D6F742001}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DEC23E9-B2C6-47CC-833A-452D6F742001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37D8FA68-6DB4-4EFF-B8FC-8DAC2F02085A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37D8FA68-6DB4-4EFF-B8FC-8DAC2F02085A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37D8FA68-6DB4-4EFF-B8FC-8DAC2F02085A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37D8FA68-6DB4-4EFF-B8FC-8DAC2F02085A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
