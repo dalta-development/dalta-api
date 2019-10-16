@@ -2,14 +2,16 @@ using System;
 using System.Collections.Generic;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson.Serialization.IdGenerators;
 
 namespace DaltaAPI.Core.Models
 {
     public class Grade
     {
-        public Guid StudentUUID;
-        public Guid ClassUUID;
-        public Guid SchoolUUID;
+        [BsonId]
+        public ObjectId StudentUUID;
+        public ObjectId ClassUUID;
+        public ObjectId SchoolUUID;
         
         public List<MarkItem> Marks { get; set; }
     }
@@ -18,6 +20,7 @@ namespace DaltaAPI.Core.Models
     {
         public float Mark { get; set; }
         public short Weight { get; set; }
-        public string SubjectID { get; set; }
+        [BsonId]
+        public ObjectId SubjectID { get; set; }
     }
 }

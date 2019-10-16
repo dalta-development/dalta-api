@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using DaltaAPI.Core.Models;
+using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace DaltaAPI.Core.Services
@@ -19,7 +20,7 @@ namespace DaltaAPI.Core.Services
         public List<Grade> Get() =>
             _grades.Find(null).ToList();
 
-        public Grade GetByUUID(Guid studentUuid) =>
+        public Grade GetByUUID(ObjectId studentUuid) =>
             _grades.Find<Grade>(grade => grade.StudentUUID == studentUuid).FirstOrDefault();
 
         public Grade Create(Grade grade)
@@ -28,7 +29,7 @@ namespace DaltaAPI.Core.Services
             return grade;
         }
 
-        public void UpdateOne(Grade gradeIn, Guid studentUuid)
+        public void UpdateOne(Grade gradeIn, ObjectId studentUuid)
         {
             _grades.ReplaceOne(grade => grade.StudentUUID == studentUuid, gradeIn);
         }
@@ -38,7 +39,7 @@ namespace DaltaAPI.Core.Services
             _grades.DeleteOne(grade => grade.StudentUUID == gradeIn.StudentUUID);
         }
 
-        public void DeleteById(Guid studentUuid)
+        public void DeleteById(ObjectId studentUuid)
         {
             _grades.DeleteOne(grade => grade.StudentUUID == studentUuid);
         }
