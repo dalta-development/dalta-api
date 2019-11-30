@@ -9,7 +9,7 @@ namespace DaltaAPI.Core.Models
     public class Student : Person
     {
         [BsonId]
-        public ObjectId UUID { get; set; }
+        public ObjectId StudentUUID { get; set; }
         public Employee Coach { get; set; }
         public DateTime BirthDate { get; set; }
         public List<Grade> Grades { get; set; }
